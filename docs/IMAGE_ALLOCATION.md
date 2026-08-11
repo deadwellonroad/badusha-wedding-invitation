@@ -4,8 +4,8 @@ All sizes below are exact byte counts. Original files remain in `images/`; the w
 
 | Website use | Canonical project source | Source pixels | Source bytes | Production file | Production pixels | Production bytes |
 |---|---|---:|---:|---|---:|---:|
-| Hero | `images/Main hero couple photo.jpg` | 1600×2000 | 1,013,576 | `public/assets/images/hero/hero-1600.webp` | 1600×2000 | 128,166 |
-| Final couple | `images/Final couple portrait.jpg` | 1600×2000 | 944,479 | `public/assets/images/final/final-1600.webp` | 1600×2000 | 96,950 |
+| Hero | `images/Main hero couple photo.jpg` | 1600×2000 | 2,571,412 | `public/assets/images/hero/hero-1600.webp` | 1600×2000 | 329,158 |
+| Final couple | `images/Final couple portrait.jpg` | 1600×2000 | 3,501,814 | `public/assets/images/final/final-1600.webp` | 1600×2000 | 476,232 |
 | Venue | `images/Planet Auditorium photo.jpg` | 1920×1080 | 1,581,249 | `public/assets/images/venue/venue-1920.webp` | 1920×1080 | 298,644 |
 | Desktop Frame 01 | `images/DESCTOP/01.png` | 1920×1080 | 2,084,109 | `public/assets/story/story_frame_01.webp` | 1920×1080 | 90,740 |
 | Desktop Frame 02 | `images/DESCTOP/02.png` | 1920×1080 | 2,541,972 | `public/assets/story/story_frame_02.webp` | 1920×1080 | 151,680 |
@@ -20,9 +20,9 @@ All sizes below are exact byte counts. Original files remain in `images/`; the w
 | Mobile Frame 05 | `images/MOBILE/05.png` | 1080×1920 | 2,396,183 | `public/assets/story/story_frame_05_mobile.webp` | 1080×1920 | 142,452 |
 | Mobile Frame 06 | `images/MOBILE/06.png` | 1080×1920 | 2,412,803 | `public/assets/story/story_frame_06_mobile.webp` | 1080×1920 | 145,214 |
 
-Responsive hero derivatives are 640×800 (44,938 bytes), 960×1200 (73,210 bytes), 1280×1600 (101,492 bytes), and 1600×2000 (128,166 bytes).
+Responsive hero derivatives are 640×800 (57,006 bytes), 960×1200 (108,662 bytes), 1280×1600 (179,818 bytes), and 1600×2000 (329,158 bytes).
 
-Responsive final-couple derivatives are 640×800 (32,842 bytes), 960×1200 (53,492 bytes), 1280×1600 (75,120 bytes), and 1600×2000 (96,950 bytes).
+Responsive final-couple derivatives are 640×800 (76,740 bytes), 960×1200 (166,096 bytes), 1280×1600 (294,044 bytes), and 1600×2000 (476,232 bytes).
 
 Responsive venue derivatives are 720×405 (71,272 bytes), 1200×675 (161,600 bytes), and 1920×1080 (298,644 bytes).
 
