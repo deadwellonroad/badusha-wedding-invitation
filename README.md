@@ -2,6 +2,8 @@
 
 Production-ready static wedding invitation for the reception on Sunday, 30 August 2026 at Planet Auditorium.
 
+Production site: https://badusha-wedding-invitation.pages.dev/
+
 ## Project structure
 
 - `public/` — the only Cloudflare Pages deployment output; contains `index.html`, `admin.html`, the calendar file, styles, scripts, and optimized images.

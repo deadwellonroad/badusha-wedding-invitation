@@ -47,6 +47,9 @@ for (let frame = 1; frame <= 6; frame += 1) {
 }
 assert(index.includes('loading="lazy"'), 'Below-the-fold images should be lazy loaded.');
 assert(index.includes('prefers-reduced-motion') || fs.readFileSync(path.join(publicRoot, 'assets/css/site.css'), 'utf8').includes('prefers-reduced-motion'), 'Reduced-motion support is missing.');
+assert(index.includes('<link rel="canonical" href="https://badusha-wedding-invitation.pages.dev/">'), 'Production canonical URL is missing.');
+assert(index.includes('<meta property="og:url" content="https://badusha-wedding-invitation.pages.dev/">'), 'Production Open Graph URL is missing.');
+assert(index.includes('content="https://badusha-wedding-invitation.pages.dev/assets/story/story_frame_06.webp"'), 'Social sharing image must use an absolute production URL.');
 
 ['Responses', 'Accepted', 'Expected People', 'Declined', 'Average Party Size', 'Refresh', 'Export CSV'].forEach((value) => {
   assert(admin.includes(value), `Admin dashboard is missing: ${value}`);
