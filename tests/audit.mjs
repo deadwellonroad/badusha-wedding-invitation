@@ -9,6 +9,7 @@ const adminPath = path.join(publicRoot, 'admin.html');
 const index = fs.readFileSync(indexPath, 'utf8');
 const admin = fs.readFileSync(adminPath, 'utf8');
 const siteJs = fs.readFileSync(path.join(publicRoot, 'assets/js/site.js'), 'utf8');
+const siteCss = fs.readFileSync(path.join(publicRoot, 'assets/css/site.css'), 'utf8');
 const rsvpConfig = fs.readFileSync(path.join(publicRoot, 'assets/rsvp-config.js'), 'utf8');
 const backend = fs.readFileSync(path.join(root, 'backend/rsvp-backend.gs'), 'utf8');
 const calendar = fs.readFileSync(path.join(publicRoot, 'wedding.ics'), 'utf8');
@@ -46,7 +47,9 @@ for (let frame = 1; frame <= 6; frame += 1) {
   assert(index.includes(`story_frame_${number}_mobile.webp`), `Missing mobile story frame ${number}.`);
 }
 assert(index.includes('loading="lazy"'), 'Below-the-fold images should be lazy loaded.');
-assert(index.includes('prefers-reduced-motion') || fs.readFileSync(path.join(publicRoot, 'assets/css/site.css'), 'utf8').includes('prefers-reduced-motion'), 'Reduced-motion support is missing.');
+assert(index.includes('prefers-reduced-motion') || siteCss.includes('prefers-reduced-motion'), 'Reduced-motion support is missing.');
+assert(siteCss.includes('.blessing-inner { width: min(930px, 100%); max-width: 100%; min-width: 0; }'), 'The Arabic blessing container must be width-constrained.');
+assert(siteCss.includes('font: 500 clamp(20px, 4.6vw, 56px)/1.4 var(--arabic)'), 'The Bismillah ligature must use a bounded responsive size.');
 assert(index.includes('<link rel="canonical" href="https://badusha-wedding-invitation.pages.dev/">'), 'Production canonical URL is missing.');
 assert(index.includes('<meta property="og:url" content="https://badusha-wedding-invitation.pages.dev/">'), 'Production Open Graph URL is missing.');
 assert(index.includes('content="https://badusha-wedding-invitation.pages.dev/assets/story/story_frame_06.webp"'), 'Social sharing image must use an absolute production URL.');
