@@ -9,6 +9,7 @@ const adminPath = path.join(publicRoot, 'admin.html');
 const index = fs.readFileSync(indexPath, 'utf8');
 const admin = fs.readFileSync(adminPath, 'utf8');
 const siteJs = fs.readFileSync(path.join(publicRoot, 'assets/js/site.js'), 'utf8');
+const rsvpConfig = fs.readFileSync(path.join(publicRoot, 'assets/rsvp-config.js'), 'utf8');
 const backend = fs.readFileSync(path.join(root, 'backend/rsvp-backend.gs'), 'utf8');
 const calendar = fs.readFileSync(path.join(publicRoot, 'wedding.ics'), 'utf8');
 const failures = [];
@@ -89,7 +90,7 @@ const publicFiles = walk(publicRoot);
 assert(!publicFiles.some((file) => file.endsWith('.gs')), 'Google Apps Script source must not be inside public/.');
 const publicText = publicFiles.filter((file) => /\.(?:html|js|css|json|webmanifest|txt|ics|svg)$/.test(file)).map((file) => fs.readFileSync(file, 'utf8')).join('\n');
 assert(!/(?:ADMIN_PASSWORD|password|passwd|credential)\s*[:=]\s*["']\d{6,}["']/i.test(publicText), 'A clear-text numeric credential leaked into public files.');
-assert(!/script\.google\.com\/macros\/s\/(?!REPLACE_ME)[^/]+\/exec/.test(publicText), 'Unexpected configured Apps Script endpoint found during pre-deployment audit.');
+assert(/endpoint:\s*'https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec'/.test(rsvpConfig), 'A valid production Apps Script /exec endpoint is required.');
 
 if (failures.length) {
   console.error(`Audit failed with ${failures.length} issue(s):`);
