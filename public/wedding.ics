@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Badusha Wedding Invitation//Wedding Reception//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20260830T113000-badusha-nadeera-wedding@wedding-invitation
+DTSTAMP:20260811T120000Z
+DTSTART;TZID=Asia/Kolkata:20260830T113000
+DTEND;TZID=Asia/Kolkata:20260830T140000
+SUMMARY:Mohamed Badusha & Mumthas Nadeera — Wedding Reception
+LOCATION:Planet Auditorium
+DESCRIPTION:Wedding reception of Mohamed Badusha and Mumthas Nadeera.\nSunday\, 30 August 2026\, 11:30 AM–2:00 PM IST.\nGoogle Maps: https://maps.app.goo.gl/E7kseLG7TxHm4TL17
+URL:https://maps.app.goo.gl/E7kseLG7TxHm4TL17
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

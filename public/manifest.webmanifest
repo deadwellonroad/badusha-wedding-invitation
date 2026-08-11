@@ -1,0 +1,21 @@
+{
+  "name": "Mohamed Badusha & Mumthas Nadeera — Wedding Reception",
+  "short_name": "Badusha Wedding",
+  "description": "Wedding reception invitation for 30 August 2026 at Planet Auditorium.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4ede3",
+  "theme_color": "#3b2930",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

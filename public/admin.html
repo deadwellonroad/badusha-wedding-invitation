@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3b2930">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Family RSVP Dashboard | Mohamed Badusha &amp; Mumthas Nadeera</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Return to the wedding invitation">
+      <span class="brand-mark" aria-hidden="true">M&amp;M</span>
+      <span><strong>Family RSVP</strong><small>30 August 2026</small></span>
+    </a>
+    <div class="top-actions">
+      <a class="small-button" href="index.html">Invitation</a>
+      <button class="small-button hidden" id="logoutButton" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="login-view" id="loginView" aria-labelledby="loginTitle">
+      <div class="login-card">
+        <div class="login-mark" aria-hidden="true">♡</div>
+        <p class="eyebrow">Private family access</p>
+        <h1 id="loginTitle">RSVP Dashboard</h1>
+        <p>Sign in to review family responses and the expected guest count.</p>
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" required autocomplete="username">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required autocomplete="current-password">
+          <button class="login-button" id="loginButton" type="submit">Open Dashboard</button>
+          <p class="login-error" id="loginError" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="dashboard hidden" id="dashboardView" aria-labelledby="dashboardTitle">
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">Mohamed Badusha &amp; Mumthas Nadeera</p>
+          <h1 id="dashboardTitle">Guest overview</h1>
+          <p>Wedding Reception · Sunday, 30 August 2026 · 11:30 AM–2:00 PM</p>
+          <small id="lastUpdated">Not refreshed yet</small>
+        </div>
+        <div class="sync-state local" id="syncState"><span aria-hidden="true"></span><b id="syncText">Local preview</b></div>
+      </div>
+
+      <div class="metrics" aria-label="RSVP summary">
+        <article><span>Responses</span><strong data-metric="responses">0</strong><small>Families replied</small></article>
+        <article><span>Accepted</span><strong data-metric="accepted">0</strong><small>Yes responses</small></article>
+        <article><span>Expected People</span><strong data-metric="guests">0</strong><small>Total attending</small></article>
+        <article><span>Declined</span><strong data-metric="declined">0</strong><small>Unable to attend</small></article>
+        <article><span>Average Party Size</span><strong data-metric="average">0</strong><small>Per accepted reply</small></article>
+      </div>
+
+      <div class="insights">
+        <section class="panel" aria-labelledby="responseMixTitle">
+          <h2 id="responseMixTitle">Response mix</h2>
+          <div class="bar-row"><span>Accepted</span><div><i id="acceptedBar"></i></div><b id="acceptedPercent">0%</b></div>
+          <div class="bar-row"><span>Declined</span><div><i id="declinedBar"></i></div><b id="declinedPercent">0%</b></div>
+          <div class="bar-row"><span>Average party</span><div><i id="averageBar"></i></div><b id="averageValue">0</b></div>
+        </section>
+        <section class="panel attendance-panel" aria-labelledby="attendanceTitle">
+          <h2 id="attendanceTitle">Attendance at a glance</h2>
+          <div class="guest-ring" id="guestRing"><div><strong id="ringGuests">0</strong><span>Expected people</span></div></div>
+          <p id="ringNote">RSVP totals will appear here as responses arrive.</p>
+        </section>
+      </div>
+
+      <section class="panel table-panel" aria-labelledby="guestTableTitle">
+        <div class="table-heading">
+          <div><h2 id="guestTableTitle">Guest responses</h2><p id="dataNote">Responses saved on this device are shown during setup.</p></div>
+          <div class="table-actions">
+            <label class="sr-only" for="searchInput">Search guest responses</label>
+            <input id="searchInput" type="search" placeholder="Search name or phone">
+            <label class="sr-only" for="attendanceFilter">Filter by attendance</label>
+            <select id="attendanceFilter"><option value="all">All responses</option><option value="Yes">Accepted</option><option value="No">Declined</option></select>
+            <button id="refreshButton" type="button">Refresh</button>
+            <button id="exportButton" type="button">Export CSV</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Name</th><th scope="col">Attendance</th><th scope="col">Guests</th><th scope="col">Phone</th><th scope="col">Submitted / Updated</th></tr></thead>
+            <tbody id="responseRows"></tbody>
+          </table>
+          <p class="empty hidden" id="emptyState">No RSVP responses yet.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="assets/rsvp-config.js"></script>
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>
